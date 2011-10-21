@@ -16,8 +16,6 @@ bc. 	<localRepository>C:\Java\tycho-maven-repository</localRepository>
 
 
 
-
-
 h1. Remarks
 
 
@@ -66,4 +64,12 @@ bc..
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
       <plugin id="org.eclipse.sdk" autoStart="true" startLevel="4" />
       
-      
+
+h1. Resources
+
+
+* "p2 getting started":http://wiki.eclipse.org/Equinox_p2_Getting_Started 
+* "Vogella p2 update tutorial":http://www.vogella.de/articles/EclipseP2Update/article.html
+* "p2 mechanism broken after migrating to Helios":http://www.eclipse.org/forums/index.php/t/171233/
+ 
+
