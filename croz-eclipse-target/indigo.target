@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.6"?>
+
+<target includeMode="feature" name="indigo" sequenceNumber="31">
+<locations>
+<location includeAllPlatforms="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.moreunit.mock.feature.group" version="2.4.2"/>
+<unit id="org.moreunit.feature.group" version="2.4.2"/>
+<repository location="http://deploy.lan.croz.net/eclipse-mirror/moreunit"/>
+</location>
+<location includeAllPlatforms="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.jst.ws.axis2tools.feature.feature.group" version="1.1.200.v201103022333-78-FF0DZRDKDDePSKwHj"/>
+<unit id="org.eclipse.jpt.jaxb.feature.feature.group" version="1.0.1.v201108080010-508aAkF7BB7U8Q779A"/>
+<unit id="org.eclipse.jpt.jpadiagrameditor.feature.feature.group" version="1.0.1.v201108100925-4-19oB5885P7C687B"/>
+<unit id="org.eclipse.jpt.jpa.feature.feature.group" version="3.0.1.v201108163011-7R7F7CFC7sRdiShWvWQYU375"/>
+<unit id="org.eclipse.jst.enterprise_ui.feature.feature.group" version="3.3.1.v201107072200-7b7II1PFSK2WIlPwJBmNz-VWwVsTn"/>
+<unit id="org.eclipse.pde.source.feature.group" version="3.7.1.r37x_v20110810-0800-7b7qFVtFEx2XnmZ4jlM5mjM"/>
+<unit id="org.eclipse.sdk.ide" version="3.7.1.M20110909-1335"/>
+<unit id="org.eclipse.equinox.p2.core.feature.feature.group" version="1.0.1.R37x_v20110906-8290FZ3FUqIcLqkVkEaTdn_14C7G"/>
+<unit id="org.eclipse.equinox.p2.core.feature.source.feature.group" version="1.0.1.R37x_v20110906-8290FZ3FUqIcLqkVkEaTdn_14C7G"/>
+<unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="1.0.101.R37x_v20110909-4-8_9oB5885K5B28WKK"/>
+<unit id="org.eclipse.equinox.p2.user.ui.feature.group" version="2.1.2.R37x_v20110815-1155-6-Bj9JXOeQxOURYC-l9BL7rDEQO7"/>
+<unit id="org.eclipse.epp.package.jee.feature.feature.group" version="1.4.1.20110909-1818"/>
+<unit id="org.eclipse.jetty.slf4jlogback.feature.group" version="7.5.1.201109140245"/>
+<unit id="org.eclipse.m2e.feature.feature.group" version="1.0.100.20110804-1717"/>
+<unit id="org.eclipse.m2e.logback.feature.feature.group" version="1.0.100.20110804-1717"/>
+<unit id="org.eclipse.epp.mpc.feature.group" version="1.1.1.I20110907-0947"/>
+<unit id="org.eclipse.wst.server_adapters.feature.feature.group" version="3.2.100.v20110303-51EoAkF77g8HBSc"/>
+<repository location="http://deploy.lan.croz.net/eclipse-mirror/eclipse-indigo-sr1"/>
+</location>
+<location includeAllPlatforms="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.ajdt.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.contribution.weaving.source.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.contribution.xref.source.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.ajdt.source.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.contribution.weaving.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.equinox.weaving.sdk.feature.group" version="0.0.0"/>
+<unit id="org.eclipse.contribution.xref.feature.group" version="0.0.0"/>
+<repository location="http://deploy.lan.croz.net/eclipse-mirror/ajdt"/>
+</location>
+</locations>
+<environment>
+<os>win32</os>
+<ws>win32</ws>
+<arch>x86_64</arch>
+<nl>en_US</nl>
+</environment>
+</target>

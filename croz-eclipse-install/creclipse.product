@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="CROZ Eclipse" uid="creclipse-3.7.0" id="org.eclipse.platform.ide" application="org.eclipse.ui.ide.workbench" version="3.7.0.201110211508" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgs>-Xms256m -Xmx768m  -XX:MaxPermSize=256m</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <splash
+      startupProgressRect="5,275,445,15" />
+   <launcher name="creclipse">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</linux>
+      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</macos>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</windows>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.m2e.feature" version="1.0.100.20110804-1717"/>
+      <feature id="org.eclipse.m2e.logback.feature" version="1.0.100.20110804-1717"/>
+      <feature id="org.eclipse.epp.package.jee.feature" version="1.4.1.20110909-1818"/>
+      <feature id="org.eclipse.equinox.p2.core.feature" version="1.0.1.R37x_v20110906-8290FZ3FUqIcLqkVkEaTdn_14C7G"/>
+      <feature id="org.eclipse.equinox.p2.discovery.feature" version="1.0.101.R37x_v20110909-4-8_9oB5885K5B28WKK"/>
+      <feature id="org.eclipse.ajdt" version="2.1.3.e37x-20110628-1900"/>
+      <feature id="org.eclipse.jdt" version="3.7.1.r371_v20110810-0800-7z8gFcoFMLfTabvKsR5Qm9rBGEBK"/>
+      <feature id="org.eclipse.sdk" version="3.7.1.r37x_v20110728-7Q7xAEDDePtVvBAYYD3z-il0ox7CoGe6mz-B8FDdVn0YR"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.ui.discovery" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.sdk" autoStart="true" startLevel="4" />
+   </configurations>
+
+</product>

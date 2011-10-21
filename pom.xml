@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.croz.infrastructure</groupId>
+    <artifactId>croz-eclipse</artifactId>
+    <version>3.7.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <description>CROZ eclipse distribution</description>
+
+    <properties>
+        <version.tycho>0.13.0</version.tycho>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--
+        <project.build.generateJNLP>true</project.build.generateJNLP>
+        <project.build.title>JNLP TEST</project.build.title>
+        <project.build.vendor>KAI TOEDTER</project.build.vendor>
+        <project.build.javaVersion>1.6</project.build.javaVersion>
+         -->
+    </properties>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>target-platform-configuration</artifactId>
+                <version>${version.tycho}</version>
+                <configuration>
+                    <resolver>p2</resolver>
+                    <target>
+                        <artifact>
+                            <groupId>net.croz.infrastructure</groupId>
+                            <artifactId>croz-eclipse-target</artifactId>
+                            <version>3.7.1-SNAPSHOT</version>
+                            <classifier>indigo</classifier>
+                        </artifact>
+                    </target>
+                    <ignoreTychoRepositories>true</ignoreTychoRepositories>
+                    <environments>
+<!--                         <environment> -->
+<!--                             <os>win32</os> -->
+<!--                             <ws>win32</ws> -->
+<!--                             <arch>x86</arch> -->
+<!--                         </environment> -->
+                        <environment>
+                            <os>win32</os>
+                            <ws>win32</ws>
+                            <arch>x86_64</arch>
+                        </environment>
+<!--                         <environment> -->
+<!--                             <os>macosx</os> -->
+<!--                             <ws>cocoa</ws> -->
+<!--                             <arch>x86_64</arch> -->
+<!--                         </environment> -->
+<!--                         <environment> -->
+<!--                             <os>linux</os> -->
+<!--                             <ws>gtk</ws> -->
+<!--                             <arch>x86_64</arch> -->
+<!--                         </environment> -->
+                    </environments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${version.tycho}</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+    <modules>
+        <module>croz-eclipse-target</module>
+        <module>croz-eclipse-install</module>
+    </modules>
+</project>
