@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.croz.infrastructure</groupId>
     <artifactId>croz-eclipse</artifactId>
@@ -7,7 +8,7 @@
     <description>CROZ eclipse distribution</description>
 
     <properties>
-        <version.tycho>0.13.0</version.tycho>
+        <version.tycho>0.14.1</version.tycho>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--
         <project.build.generateJNLP>true</project.build.generateJNLP>
@@ -19,22 +20,29 @@
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>target-platform-configuration</artifactId>
                 <version>${version.tycho}</version>
                 <configuration>
                     <resolver>p2</resolver>
+                    <dependency-resolution>
+                        <optionalDependencies>ignore</optionalDependencies>
+                    </dependency-resolution>
                     <target>
                         <artifact>
                             <groupId>net.croz.infrastructure</groupId>
                             <artifactId>croz-eclipse-target</artifactId>
                             <version>3.7.1-SNAPSHOT</version>
-                            <classifier>indigo</classifier>
+                            <classifier>m2e-e37-local</classifier>
                         </artifact>
                     </target>
                     <ignoreTychoRepositories>true</ignoreTychoRepositories>
+                    <filter>
+                        <type>p2-installable-unit</type>
+                        <id>org.eclipse.equinox.servletbridge.extensionbundle</id>
+                        <removeAll />
+                    </filter>
                     <environments>
 <!--                         <environment> -->
 <!--                             <os>win32</os> -->
@@ -69,6 +77,7 @@
     </build>
     <modules>
         <module>croz-eclipse-target</module>
-        <module>croz-eclipse-install</module>
+        <module>jee-eclipse-install</module>
+<!--         <module>croz-eclipse-install</module> -->
     </modules>
 </project>
