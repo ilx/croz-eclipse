@@ -14,8 +14,89 @@
     <properties>
         <tycho-extras-version>0.14.0</tycho-extras-version>
         <tycho-version>0.14.1</tycho-version>
+	<features>org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt,org.eclipse.m2e.feature.feature.group,org.eclipse.m2e.logback.feature.feature.group,org.eclipse.jst.enterprise_ui.feature.feature.group,org.eclipse.wst.xml_ui.feature.feature.group,org.eclipse.wst.server_adapters.feature.feature.group,org.eclipse.jst.server_adapters.feature.feature.group,org.eclipse.jst.server_ui.feature.feature.group,org.eclipse.wst.web_ui.feature.feature.group,org.eclipse.jst.web_ui.feature.feature.group
+	</features>
+	<sites>${eclipse.mirror.url}/releases/indigo,${eclipse.mirror.url}/technology/m2e/releases,${eclipse.mirror.url}/eclipse/updates/3.7</sites>
     </properties>
 
+    <profiles>
+	<profile>
+		<id>ajdt</id>
+		<properties>
+			<site-ajdt>http://deploy.lan.croz.net/eclipseMirror/external/v1/ajdt/2.1.3</site-ajdt>
+			<features-ajdt>org.eclipse.ajdt.feature.group,org.eclipse.contribution.xref.feature.group,org.eclipse.contribution.weaving.feature.group</features-ajdt>
+		</properties>
+	</profile>
+	<profile>
+		<id>no-ajdt</id>
+		<activation>
+			<property>
+				<name>!site-ajdt</name>
+			</property>
+		</activation>
+		<properties>
+			<site-ajdt></site-ajdt>
+			<features-ajdt></features-ajdt>
+		</properties>
+	</profile>
+	<profile>
+		<id>anyedit</id>
+		<properties>
+			<site-anyedit>http://deploy.lan.croz.net/eclipseMirror/external/v1/anyedit</site-anyedit>
+			<features-anyedit>AnyEditTools.feature.group,EclipseSkins.feature.group,FileSync.feature.group,JDepend4Eclipse.feature.group,de.loskutov.BytecodeOutline.feature.feature.group</features-anyedit>
+		</properties>
+	</profile>
+	<profile>
+		<id>eclemma</id>
+		<properties>
+			<site-eclemma>http://deploy.lan.croz.net/eclipseMirror/external/v1/eclemma</site-eclemma>
+			<features-eclemma>com.mountainminds.eclemma.feature.feature.group</features-eclemma>
+		</properties>
+	</profile>
+	<profile>
+		<id>no-eclemma</id>
+		<activation>
+			<property>
+				<name>!site-eclemma</name>
+			</property>
+		</activation>
+		<properties>
+			<site-eclemma></site-eclemma>
+			<features-eclemma></features-eclemma>
+		</properties>
+	</profile>
+	<profile>
+		<id>moreunit</id>
+		<properties>
+			<site-moreunit>http://deploy.lan.croz.net/eclipseMirror/external/v1/moreunit</site-moreunit>
+			<features-moreunit>org.moreunit.feature.group</features-moreunit>
+		</properties>
+	</profile>
+	<profile>
+		<id>pmd</id>
+		<properties>
+			<site-pmd>http://deploy.lan.croz.net/eclipseMirror/external/v1/pmd</site-pmd>
+			<features-pmd>net.sourceforge.pmd.eclipse.feature.group</features-pmd>
+		</properties>
+	</profile>
+	<profile>
+		<id>sts</id>
+		<properties>
+			<site-sts>http://deploy.lan.croz.net/eclipseMirror/external/v1/sts</site-sts>
+<!--
+			<features-sts>org.springframework.ide.eclipse.feature.feature.group,com.springsource.sts.feature.group,org.springframework.ide.eclipse.autowire.feature.feature.group,org.springframework.ide.eclipse.aop.feature.feature.group,org.springframework.ide.eclipse.batch.feature.feature.group,org.springframework.ide.eclipse.security.feature.feature.group,org.springframework.ide.eclipse.webflow.feature.feature.group,com.springsource.sts.roo.feature.group,com.springsource.sts.maven.feature.group,org.springframework.ide.eclipse.ajdt.feature.feature.group,</features-sts>
+-->
+			<features-sts>com.springsource.sts.feature.group,org.springframework.ide.eclipse.feature.feature.group,org.springframework.ide.eclipse.autowire.feature.feature.group,org.springframework.ide.eclipse.aop.feature.feature.group,org.springframework.ide.eclipse.batch.feature.feature.group,org.springframework.ide.eclipse.security.feature.feature.group,org.springframework.ide.eclipse.webflow.feature.feature.group,com.springsource.sts.roo.feature.group,org.springframework.ide.eclipse.ajdt.feature.feature.group</features-sts>
+		</properties>
+	</profile>
+	<profile>
+		<id>subclipse-1.8</id>
+		<properties>
+			<site-subclipse-1.8></site-subclipse-1.8>
+			<features-subclipse-1.8></features-subclipse-1.8>
+		</properties>
+	</profile>
+    </profiles>
 
     <build>
         <plugins>
@@ -24,9 +105,8 @@
                 <artifactId>tycho-eclipserun-plugin</artifactId>
                 <version>${tycho-extras-version}</version>
                 <configuration>
-                    <appArgLine>
-                        -consoleLog -application org.eclipse.equinox.p2.director -nosplash -destination ${build.destination} -repository ${eclipse.mirror.url}/releases/indigo,${eclipse.mirror.url}/technology/m2e/releases,${eclipse.mirror.url}/eclipse/updates/3.7 -installIUs org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt,org.eclipse.m2e.feature.feature.group,org.eclipse.m2e.logback.feature.feature.group,org.eclipse.jst.enterprise_ui.feature.feature.group,org.eclipse.wst.xml_ui.feature.feature.group,org.eclipse.wst.server_adapters.feature.feature.group,org.eclipse.jst.server_adapters.feature.feature.group,org.eclipse.jst.server_ui.feature.feature.group,org.eclipse.wst.web_ui.feature.feature.group,org.eclipse.jst.web_ui.feature.feature.group
-                    </appArgLine>
+		    <argLine>-Declipse.p2.mirrors=false</argLine>
+                    <appArgLine>-consoleLog -application org.eclipse.equinox.p2.director -nosplash -destination ${build.destination} -repository ${sites},${site-ajdt},${site-anyedit},${site-eclemma},${site-moreunit},${site-sts} -installIUs ${features},${features-ajdt},${features-anyedit},${features-eclemma},${features-moreunit},${features-sts}</appArgLine>
                     <dependencies>
                         <dependency>
                             <artifactId>org.eclipse.equinox.p2.transport.ecf</artifactId>

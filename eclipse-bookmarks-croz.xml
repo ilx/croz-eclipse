@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmarks>
+   <site url="http://deploy.lan.croz.net/eclipseMirror/external/v1/ajdt/2.1.3" selected="true" name="croz.ajdt"/>
+   <site url="http://deploy.lan.croz.net/eclipseMirror/external/v1/anyedit" selected="true" name="croz.anyedit"/>
+   <site url="http://deploy.lan.croz.net/eclipseMirror/external/v1/eclemma" selected="true" name="croz.eclemma"/>
+   <site url="http://deploy.lan.croz.net/eclipseMirror/external/v1/moreunit" selected="true" name="croz.moreunit"/>
+   <site url="http://deploy.lan.croz.net/eclipseMirror/external/v1/pmd" selected="true" name="croz.pmd"/>
+   <site url="http://deploy.lan.croz.net/eclipseMirror/external/v1/sts" selected="true" name="croz.sts"/>
+   <site url="http://deploy.lan.croz.net/eclipseMirror/external/v1/subclipse-1.8" selected="true" name="croz.subclipse-1.8"/>
+</bookmarks>
