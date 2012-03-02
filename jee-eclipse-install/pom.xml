@@ -25,9 +25,17 @@
                 <version>${tycho-extras-version}</version>
                 <configuration>
                     <appArgLine>
-                        -console -consoleLog -application org.eclipse.equinox.p2.director -nosplash -destination C:/tmp/eclipse  -repository file:///C:/Java/eclipse/mirrors/indigo/indigo,file:///C:/Java/eclipse/mirrors/indigo/m2e/releases,file:///C:/Java/eclipse/mirrors/platform-e37/3.7 -installIUs org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt
+                        -consoleLog -application org.eclipse.equinox.p2.director -nosplash -destination ${build.destination} -repository ${eclipse.mirror.url}/releases/indigo,${eclipse.mirror.url}/technology/m2e/releases,${eclipse.mirror.url}/eclipse/updates/3.7 -installIUs org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt,org.eclipse.m2e.feature.feature.group,org.eclipse.m2e.logback.feature.feature.group,org.eclipse.jst.enterprise_ui.feature.feature.group,org.eclipse.wst.xml_ui.feature.feature.group,org.eclipse.wst.server_adapters.feature.feature.group,org.eclipse.jst.server_adapters.feature.feature.group,org.eclipse.jst.server_ui.feature.feature.group,org.eclipse.wst.web_ui.feature.feature.group,org.eclipse.jst.web_ui.feature.feature.group
                     </appArgLine>
                     <dependencies>
+                        <dependency>
+                            <artifactId>org.eclipse.equinox.p2.transport.ecf</artifactId>
+                            <type>eclipse-plugin</type>
+                        </dependency>
+                        <dependency>
+                            <artifactId>org.eclipse.equinox.p2.repository</artifactId>
+                            <type>eclipse-plugin</type>
+                        </dependency>
                         <dependency>
                             <artifactId>org.eclipse.equinox.p2.touchpoint.natives</artifactId>
                             <type>eclipse-plugin</type>

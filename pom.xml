@@ -10,14 +10,39 @@
     <properties>
         <version.tycho>0.14.1</version.tycho>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!--
-        <project.build.generateJNLP>true</project.build.generateJNLP>
-        <project.build.title>JNLP TEST</project.build.title>
-        <project.build.vendor>KAI TOEDTER</project.build.vendor>
-        <project.build.javaVersion>1.6</project.build.javaVersion>
-         -->
     </properties>
 
+	<profiles>
+		<profile>
+	      <id>local</id>
+	      <properties>
+	      	<target.platform>m2e-e37-local</target.platform>
+	      	<eclipse.mirror.url>file:///media/sda2/Java/eclipse/mirrors</eclipse.mirror.url>	      	
+	      </properties>
+	    </profile>
+		<profile>
+	      <id>localhost</id>
+	      <properties>
+	      	<target.platform>m2e-e37-localhost</target.platform>
+	      	<eclipse.mirror.url>http://localhost/eclipse</eclipse.mirror.url>
+	      </properties>
+	    </profile>
+		<profile>
+	      <id>croz</id>
+	      <properties>
+	      	<target.platform>m2e-e37-croz</target.platform>
+	      	<eclipse.mirror.url>http://deploy.lan.croz.net/eclipseMirror</eclipse.mirror.url>
+	      </properties>
+	    </profile>
+		<profile>
+	      <id>eclipse</id>
+	      <properties>
+	      	<target.platform>m2e-e37-eclipse</target.platform>
+	      	<eclipse.mirror.url>http://download.eclipse.org</eclipse.mirror.url>
+	      </properties>
+	    </profile>
+	</profiles>
+    
     <build>
         <plugins>
             <plugin>
@@ -34,7 +59,7 @@
                             <groupId>net.croz.infrastructure</groupId>
                             <artifactId>croz-eclipse-target</artifactId>
                             <version>3.7.1-SNAPSHOT</version>
-                            <classifier>m2e-e37-local</classifier>
+                            <classifier>${target.platform}</classifier>
                         </artifact>
                     </target>
                     <ignoreTychoRepositories>true</ignoreTychoRepositories>
@@ -44,6 +69,7 @@
                         <removeAll />
                     </filter>
                     <environments>
+                    	<!-- this is not required for our purposes -->
 <!--                         <environment> -->
 <!--                             <os>win32</os> -->
 <!--                             <ws>win32</ws> -->
@@ -78,6 +104,5 @@
     <modules>
         <module>croz-eclipse-target</module>
         <module>jee-eclipse-install</module>
-<!--         <module>croz-eclipse-install</module> -->
     </modules>
 </project>

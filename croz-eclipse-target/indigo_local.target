@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.6"?>
+<target name="indigo_local" sequenceNumber="28">
+	<locations>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.objectledge.maven.connectors.scm.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/m2e-plugins/m2e-objectledge/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.maven.ide.eclipse.wtp.feature.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/m2e-plugins/m2e-wtp/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="com.basistech.m2e.code.quality.checkstyle.feature.feature.group"  />
+			<unit id="com.basistech.m2e.code.quality.pmd.feature.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/m2e-plugins/m2e-qa-checkstyle-pmd/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.springframework.ide.eclipse.feature.feature.group"  />
+			<unit id="com.springsource.sts.feature.group"  />
+			<unit id="org.springframework.ide.eclipse.autowire.feature.feature.group"  />
+			<unit id="org.springframework.ide.eclipse.aop.feature.feature.group"  />
+			<unit id="org.springframework.ide.eclipse.batch.feature.feature.group"  />
+			<unit id="org.springframework.ide.eclipse.integration.feature.feature.group"  />
+			<unit id="org.springframework.ide.eclipse.osgi.feature.feature.group"  />
+			<unit id="org.springframework.ide.eclipse.security.feature.feature.group"  />
+			<unit id="org.springframework.ide.eclipse.webflow.feature.feature.group"  />
+			<unit id="com.springsource.sts.roo.feature.group"  />
+			<unit id="org.springframework.ide.eclipse.ajdt.feature.feature.group"  />
+			<unit id="org.springframework.ide.eclipse.mylyn.feature.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/sts/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.moreunit.mock.feature.group"  />
+			<unit id="org.moreunit.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/moreunit/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.sonatype.m2e.buildhelper.feature.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/m2e-plugins/m2e-sonatype-extras/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="net.sourceforge.pmd.eclipse.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/pmd/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<!--
+			<unit id="org.tmatesoft.svnkit.feature.group"  />
+			<unit id="com.sun.jna.feature.group"  />
+-->
+			<unit id="com.collabnet.subversion.merge.feature.feature.group"  />
+			<unit id="org.tigris.subversion.subclipse.feature.group"  />
+			<unit id="org.tigris.subversion.subclipse.mylyn.feature.group"  />
+			<unit id="org.tigris.subversion.clientadapter.feature.feature.group"  />
+			<unit id="org.tigris.subversion.subclipse.graph.feature.feature.group"  />
+<!--
+			<unit id="org.tigris.subversion.clientadapter.javahl.feature.feature.group"  />
+			<unit id="org.tigris.subversion.clientadapter.svnkit.feature.feature.group"  />
+-->
+			<repository location="file:/opt/java/eclipse/repo/subclipse-1.8" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.bitstrings.eclipse.m2e.connectors.jaxb2.feature.group"  />
+			<unit id="org.bitstrings.eclipse.m2e.connectors.xmlbeans.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/m2e-plugins/m2e-jaxb-xmlbeans/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="net.sf.eclipsecs.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/eclipse-cs/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.eclipse.mylyn_feature.feature.group"  />
+			<unit id="org.eclipse.mylyn.context_feature.feature.group"  />
+			<unit id="org.eclipse.mylyn.wikitext_feature.feature.group"  />
+			<unit id="org.eclipse.mylyn.hudson.feature.group"  />
+			<unit id="org.eclipse.mylyn.ide_feature.feature.group"  />
+			<unit id="org.eclipse.mylyn.java_feature.feature.group"  />
+			<unit id="org.eclipse.mylyn.pde_feature.feature.group"  />
+			<unit id="org.eclipse.mylyn.team_feature.feature.group"  />
+			<unit id="org.eclipse.mylyn.bugzilla_feature.feature.group"  />
+			<unit id="org.eclipse.mylyn.trac_feature.feature.group"  />
+			<unit id="org.eclipse.mylyn.cvs.feature.group"  />
+			<unit id="org.eclipse.mylyn.git.feature.group"  />
+			<unit id="org.eclipse.mylyn.htmltext.feature.group"  />
+			<unit id="org.eclipse.mylyn.wikitext.sdk.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/mylyn/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="com.mountainminds.eclemma.feature.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/eclemma/" />
+		</location>
+<!--
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.sonatype.m2e.subclipse.feature.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/m2e-plugins/m2e-sonatype-subclipse/" />
+		</location>
+-->		
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.eclipse.epp.package.rcp.feature.feature.group"  />
+			<unit id="org.eclipse.epp.package.jee.feature.feature.group"  />
+			<unit id="org.eclipse.m2e.feature.feature.group"  />
+			<unit id="org.eclipse.m2e.logback.feature.feature.group"  />
+			<unit id="org.eclipse.epp.mpc.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/indigo-sr1/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.eclipse.m2e.feature.feature.group"  />
+			<unit id="org.eclipse.m2e.logback.feature.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/m2e/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.eclipse.ajdt.feature.group"  />
+			<unit id="org.eclipse.contribution.xref.feature.group"  />
+			<unit id="org.eclipse.contribution.weaving.feature.group"  />
+			<unit id="org.eclipse.equinox.weaving.sdk.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/ajdt/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.maven.ide.eclipse.ajdt.feature.source.feature.group"  />
+			<unit id="org.maven.ide.eclipse.ajdt.feature.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/ajdt-configurator/" />
+		</location>
+		<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.sonatype.tycho.m2e.feature.feature.group"  />
+			<repository location="file:/opt/java/eclipse/repo/m2e-plugins/m2e-sonatype-tycho/" />
+		</location>
+	</locations>
+</target>
