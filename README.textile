@@ -1,68 +1,20 @@
+h1. Purpose
+
+This maven project installs eclipse using p2 director application.
+
+h1. How it works
+
+- tycho downloads required bundles using specified target platform
+- tycho-eclipserun-plugin from tycho-extras project runs p2 director application (using bundles resolved from the target platform) which installs eclipse (and specified IUs)
 
 
-h1. Run assembly
+h1. How to run on our private network
 
+If you're on our private network just run .bat or .sh file.
 
-Run build using following syntax:
+h1. How to run on public network
 
-bc.. 
-mvn -s settings.xml clean package
-
-p. If you don't want to polute your .m2/repository specify alternative localRepository:
-
-
-bc. 	<localRepository>C:\Java\tycho-maven-repository</localRepository>
-
-
-
-
-h1. Remarks
-
-
-h2. Orbit bundles
-
-
-Orbit bundles p2 repositories can be found inside p2 map files:
-
-http://archive.eclipse.org/tools/orbit/downloads/drops/R20100519200754/repository/
-
-
-h2. p2 update
-
-
-Missing p2 rcp feature or equinox.ds
-
-Into .product file add .p2.* 
-
-
-
-bc.. 
-
-
-      <plugin id="org.eclipse.ajdt.core" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
-      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.p2.artifact.repository" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.console" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.core" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.director" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.discovery" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.discovery.compatibility" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.engine" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.garbagecollector" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.jarprocessor" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.metadata" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.metadata.repository" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.operations" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.ql" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.repository" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.touchpoint.eclipse" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.touchpoint.natives" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.transport.ecf" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.p2.ui.discovery" autoStart="true" startLevel="4" />
-      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-      <plugin id="org.eclipse.sdk" autoStart="true" startLevel="4" />
+...
       
 
 h1. Resources
