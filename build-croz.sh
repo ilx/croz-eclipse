@@ -9,5 +9,5 @@ export INSTALL_DIR="/tmp/eclipse-3.7.2"
 # Maven properties can be overwritten. Otherwise default ones (from settings file) will be used.
 # Here's an example how to override default value of eclipse.mirror.url property:
 #mvn -s settings.croz.xml -Pcroz -Dbuild.destination=$INSTALL_DIR -Declipse.mirror.url="http://deploy.lan.croz.net/eclipseMirror" compile
-mvn -s settings.croz.xml -Pcroz -Pajdt -Panyedit -Peclemma -Pmoreunit -Psts -Dbuild.destination=$INSTALL_DIR compile
+mvn -s settings.croz.xml -Pcroz -Dajdt -Danyedit -Declemma -Dmoreunit -Dsts -Dsubclipse -Dbuild.destination=$INSTALL_DIR compile
 

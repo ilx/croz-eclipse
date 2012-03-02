@@ -22,6 +22,11 @@
     <profiles>
 	<profile>
 		<id>ajdt</id>
+		<activation>
+			<property>
+				<name>ajdt</name>
+			</property>
+		</activation>
 		<properties>
 			<site-ajdt>http://deploy.lan.croz.net/eclipseMirror/external/v1/ajdt/2.1.3</site-ajdt>
 			<features-ajdt>org.eclipse.ajdt.feature.group,org.eclipse.contribution.xref.feature.group,org.eclipse.contribution.weaving.feature.group</features-ajdt>
@@ -31,7 +36,7 @@
 		<id>no-ajdt</id>
 		<activation>
 			<property>
-				<name>!site-ajdt</name>
+				<name>!ajdt</name>
 			</property>
 		</activation>
 		<properties>
@@ -41,6 +46,11 @@
 	</profile>
 	<profile>
 		<id>anyedit</id>
+		<activation>
+			<property>
+				<name>anyedit</name>
+			</property>
+		</activation>
 		<properties>
 			<site-anyedit>http://deploy.lan.croz.net/eclipseMirror/external/v1/anyedit</site-anyedit>
 			<features-anyedit>AnyEditTools.feature.group,EclipseSkins.feature.group,FileSync.feature.group,JDepend4Eclipse.feature.group,de.loskutov.BytecodeOutline.feature.feature.group</features-anyedit>
@@ -48,6 +58,11 @@
 	</profile>
 	<profile>
 		<id>eclemma</id>
+		<activation>
+			<property>
+				<name>eclemma</name>
+			</property>
+		</activation>
 		<properties>
 			<site-eclemma>http://deploy.lan.croz.net/eclipseMirror/external/v1/eclemma</site-eclemma>
 			<features-eclemma>com.mountainminds.eclemma.feature.feature.group</features-eclemma>
@@ -57,7 +72,7 @@
 		<id>no-eclemma</id>
 		<activation>
 			<property>
-				<name>!site-eclemma</name>
+				<name>!eclemma</name>
 			</property>
 		</activation>
 		<properties>
@@ -67,6 +82,11 @@
 	</profile>
 	<profile>
 		<id>moreunit</id>
+		<activation>
+			<property>
+				<name>moreunit</name>
+			</property>
+		</activation>
 		<properties>
 			<site-moreunit>http://deploy.lan.croz.net/eclipseMirror/external/v1/moreunit</site-moreunit>
 			<features-moreunit>org.moreunit.feature.group</features-moreunit>
@@ -74,6 +94,11 @@
 	</profile>
 	<profile>
 		<id>pmd</id>
+		<activation>
+			<property>
+				<name>pmd</name>
+			</property>
+		</activation>
 		<properties>
 			<site-pmd>http://deploy.lan.croz.net/eclipseMirror/external/v1/pmd</site-pmd>
 			<features-pmd>net.sourceforge.pmd.eclipse.feature.group</features-pmd>
@@ -81,19 +106,26 @@
 	</profile>
 	<profile>
 		<id>sts</id>
+		<activation>
+			<property>
+				<name>sts</name>
+			</property>
+		</activation>
 		<properties>
 			<site-sts>http://deploy.lan.croz.net/eclipseMirror/external/v1/sts</site-sts>
-<!--
 			<features-sts>org.springframework.ide.eclipse.feature.feature.group,com.springsource.sts.feature.group,org.springframework.ide.eclipse.autowire.feature.feature.group,org.springframework.ide.eclipse.aop.feature.feature.group,org.springframework.ide.eclipse.batch.feature.feature.group,org.springframework.ide.eclipse.security.feature.feature.group,org.springframework.ide.eclipse.webflow.feature.feature.group,com.springsource.sts.roo.feature.group,com.springsource.sts.maven.feature.group,org.springframework.ide.eclipse.ajdt.feature.feature.group,</features-sts>
--->
-			<features-sts>com.springsource.sts.feature.group,org.springframework.ide.eclipse.feature.feature.group,org.springframework.ide.eclipse.autowire.feature.feature.group,org.springframework.ide.eclipse.aop.feature.feature.group,org.springframework.ide.eclipse.batch.feature.feature.group,org.springframework.ide.eclipse.security.feature.feature.group,org.springframework.ide.eclipse.webflow.feature.feature.group,com.springsource.sts.roo.feature.group,org.springframework.ide.eclipse.ajdt.feature.feature.group</features-sts>
 		</properties>
 	</profile>
 	<profile>
 		<id>subclipse-1.8</id>
+		<activation>
+			<property>
+				<name>subclipse</name>
+			</property>
+		</activation>
 		<properties>
-			<site-subclipse-1.8></site-subclipse-1.8>
-			<features-subclipse-1.8></features-subclipse-1.8>
+			<site-subclipse-1.8>http://deploy.lan.croz.net/eclipseMirror/external/v1/subclipse-1.8</site-subclipse-1.8>
+			<features-subclipse-1.8>com.collabnet.subversion.merge.feature.feature.group,org.tigris.subversion.subclipse.feature.group,org.tigris.subversion.subclipse.mylyn.feature.group,org.tigris.subversion.clientadapter.feature.feature.group,org.tigris.subversion.clientadapter.javahl.feature.feature.group,org.tigris.subversion.subclipse.graph.feature.feature.group</features-subclipse-1.8>
 		</properties>
 	</profile>
     </profiles>
