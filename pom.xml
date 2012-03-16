@@ -10,6 +10,8 @@
     <properties>
         <version.tycho>0.14.1</version.tycho>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<build.p2.bundlepool>${build.destination}</build.p2.bundlepool>
+	<build.p2.roaming></build.p2.roaming>
     </properties>
 
 	<profiles>

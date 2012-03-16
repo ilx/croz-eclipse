@@ -2,47 +2,7 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">	
-	<servers>
-		<server>
-			<id>snapshots</id>
-			<username>????</username>
-			<password>????</password>
-		</server>
-		<server>
-			<id>thirdparty</id>
-			<username>???</username>
-			<password>???</password>
-		</server>
-	</servers>
 	<mirrors>
-<!-- 		<mirror> -->
-<!-- 			<id>helios-local</id> -->
-<!-- 			<mirrorOf>helios,platform-e36</mirrorOf> -->
-<!-- 			<url>file:///F:/eclipse_repos/3.6.2/helios</url> -->
-<!-- 			<layout>p2</layout> -->
-<!-- 			<mirrorOfLayouts>p2</mirrorOfLayouts> -->
-<!-- 		</mirror> -->
-<!-- 		<mirror> -->
-<!-- 			<id>indigo-local</id> -->
-<!-- 			<mirrorOf>indigo,platform-e37</mirrorOf> -->
-<!-- 			<url>file:///F:/eclipse_repos/3.7/indigo</url> -->
-<!-- 			<layout>p2</layout> -->
-<!-- 			<mirrorOfLayouts>p2</mirrorOfLayouts> -->
-<!-- 		</mirror> -->
-		<mirror>
-			<id>indigo-local</id>
-			<mirrorOf>indigo,platform-e37</mirrorOf>
-			<url>http://deploy.lan.croz.net/eclipse-mirror/eclipse-indigo-sr1</url>
-			<layout>p2</layout>
-			<mirrorOfLayouts>p2</mirrorOfLayouts>
-		</mirror>
-		<mirror>
-			<id>ajdt-e37-local</id>
-			<mirrorOf>ajdt-e37</mirrorOf>
-			<url>http://deploy.lan.croz.net/eclipse-mirror/ajdt</url>
-			<layout>p2</layout>
-			<mirrorOfLayouts>p2</mirrorOfLayouts>
-		</mirror>
 		<!--This sends everything else to /public -->
 		<!-- 
 		<mirror>
@@ -71,6 +31,13 @@
 					</snapshots>
 				</repository>
 			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>central</id>
+					<name>central maven repo</name>
+					<url>http://repo1.maven.org/maven2</url>
+				</pluginRepository>
+			</pluginRepositories>
 		</profile>
 
 		<profile>
@@ -79,15 +46,6 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<repositories>
-				<repository>
-					<id>thirdparty</id>
-					<url>http://localhost:8081/nexus/content/repositories/thirdparty</url>
-				</repository>
-				<repository>
-					<id>central</id>
-					<name>Central maven2 repo</name>
-					<url>http://repo1.maven.org/maven2</url>
-				</repository>
 				<repository>
 					<id>apache-snapshots</id>
 					<name>Apache maven2 repo</name>
@@ -114,12 +72,6 @@
 			</repositories>
             
 			<pluginRepositories>
-				<pluginRepository>
-					<id>central</id>
-					<name>central maven repo</name>
-					<url>http://repo1.maven.org/maven2</url>
-				</pluginRepository>
-
 				<pluginRepository>
 					<id>apache.snapshots</id>
 					<name>Apache Snapshots Repository</name>
@@ -151,42 +103,6 @@
 			</pluginRepositories>
 		</profile>
 
-		<profile>
-			<id>tycho-helios</id>
-			<repositories>
-				<repository>
-					<id>platform-e36</id>
-					<url>http://download.eclipse.org/eclipse/updates/3.6</url>
-					<name>Helios updates repo</name>
-					<layout>p2</layout>
-				</repository>
-				<repository>
-					<id>helios</id>
-					<url>http://download.eclipse.org/releases/helios</url>
-					<name>Helios repo</name>
-					<layout>p2</layout>
-				</repository>
-				<repository>
-					<id>swt-bot-remote</id>
-					<url>http://download.eclipse.org/technology/swtbot/helios/dev-build/update-site/</url>
-					<name>swt-bot repo</name>
-					<layout>p2</layout>
-				</repository>
-				<repository>
-					<id>ajdt-e36</id>
-					<url>http://download.eclipse.org/tools/ajdt/36/update</url>
-					<name>ajdt repo</name>
-					<layout>p2</layout>
-				</repository>
-				<repository>
-					<id>m2e</id>
-<!--                    <url>http://download.eclipse.org/technology/m2e/milestones/1.0</url> -->
-					<url>http://download.eclipse.org/technology/m2e/releases/</url>
-					<layout>p2</layout>
-				</repository>
-			</repositories>
-		</profile>
-        
 		<profile>
 			<id>tycho-indigo</id>
 			<repositories>
@@ -257,18 +173,15 @@
                     <name>Eclipse M2E repo</name>
                     <layout>p2</layout>
                 </repository>
-
             </repositories>
-        
         </profile>
+
 	</profiles>
 
 	<activeProfiles>
 		<activeProfile>dev</activeProfile>
 		<activeProfile>croz-eclipse</activeProfile>
-<!-- 		<activeProfile>ObjectTeams</activeProfile> -->
 <!-- 		<activeProfile>tycho-indigo</activeProfile> -->
-<!--         <activeProfile>tycho-helios</activeProfile> -->
 	</activeProfiles>
 
 </settings>

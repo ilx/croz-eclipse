@@ -253,7 +253,7 @@
 				<configuration>
 					<argLine>-Declipse.p2.mirrors=false</argLine>
 					<!-- do not format appArgLine -->
-					<appArgLine>-consoleLog -application org.eclipse.equinox.p2.director -nosplash -destination ${build.destination} -bundlepool ${build.p2.bundlepool}  -repository ${sites},${site-ajdt},${site-anyedit},${site-checkstyle},${site-eclemma},${site-moreunit},${site-otdt},${site-sts} -installIUs	${features},${features-ajdt},${features-anyedit},${features-checkstyle},${features-eclemma},${features-moreunit},${features-otdt},${features-sts}</appArgLine>
+					<appArgLine>-consoleLog -application org.eclipse.equinox.p2.director -nosplash ${build.p2.roaming} -destination ${build.destination} -bundlepool ${build.p2.bundlepool}  -repository ${sites},${site-ajdt},${site-anyedit},${site-checkstyle},${site-eclemma},${site-moreunit},${site-otdt},${site-sts} -installIUs	${features},${features-ajdt},${features-anyedit},${features-checkstyle},${features-eclemma},${features-moreunit},${features-otdt},${features-sts}</appArgLine>
 					<dependencies>
 						<dependency>
 							<artifactId>org.eclipse.equinox.p2.transport.ecf</artifactId>
