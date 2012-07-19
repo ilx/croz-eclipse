@@ -5,10 +5,7 @@
 <locations>
 	<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
 		<unit id="org.eclipse.jdt.feature.group" />
-		<repository location="http://deploy.lan.croz.net/eclipseMirror/releases/indigo/"/>
-	</location>
-	<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
-		<repository location="http://deploy.lan.croz.net/eclipseMirror/tools/orbit/downloads/drops/R20120119162704/repository/"/>
+		<repository location="http://10.0.1.52/eclipse/releases/indigo/"/>
 	</location>
 </locations>
 </target>

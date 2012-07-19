@@ -3,4 +3,6 @@
 .classpath
 .settings/
 */.project
+tycho-maven-repo/
+target/
 

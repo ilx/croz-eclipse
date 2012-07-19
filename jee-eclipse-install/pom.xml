@@ -14,235 +14,51 @@
 	<properties>
 		<tycho-extras-version>0.14.0</tycho-extras-version>
 		<tycho-version>0.14.1</tycho-version>
+		<eclipse.mirror.url>http://10.0.1.52/eclipse/</eclipse.mirror.url>
+
+		<sites>${eclipse.mirror.url}/releases/indigo,${eclipse.mirror.url}/eclipse/updates/3.7</sites>
+		<features>org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt</features>
+		<!--
 		<features>org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt,org.eclipse.m2e.feature.feature.group,org.eclipse.m2e.logback.feature.feature.group,org.eclipse.jst.enterprise_ui.feature.feature.group,org.eclipse.wst.xml_ui.feature.feature.group,org.eclipse.wst.server_adapters.feature.feature.group,org.eclipse.jst.server_adapters.feature.feature.group,org.eclipse.jst.server_ui.feature.feature.group,org.eclipse.wst.web_ui.feature.feature.group,org.eclipse.jst.web_ui.feature.feature.group
 		</features>
-		<sites>${eclipse.mirror.url}/releases/indigo,${eclipse.mirror.url}/technology/m2e/releases,${eclipse.mirror.url}/eclipse/updates/3.7,${eclipse.mirror.url}/tools/orbit/downloads/drops/R20120119162704/repository,${eclipse.mirror.url}/tools/orbit/downloads/drops/repository</sites>
+		-->
+
+		
+		<site-ajdt>http://10.0.1.52:8081/nexus/content/repositories/p2.ajdt.e37</site-ajdt>
+		<features-ajdt>org.eclipse.ajdt.feature.group,org.eclipse.contribution.xref.feature.group,org.eclipse.contribution.weaving.feature.group</features-ajdt>
+		
+		<site-anyedit>http://10.0.1.52:8081/nexus/content/repositories/p2.anyedit/</site-anyedit>
+		<features-anyedit>AnyEditTools.feature.group,EclipseSkins.feature.group,FileSync.feature.group,JDepend4Eclipse.feature.group,de.loskutov.BytecodeOutline.feature.feature.group</features-anyedit>
+
+		<site-checkstyle>http://10.0.1.52:8081/nexus/content/repositories/p2.checkstyle/</site-checkstyle>
+		<features-checkstyle>net.sf.eclipsecs.feature.group,com.github.sevntu.checkstyle.checks.feature.feature.group</features-checkstyle>
+
+		<site-eclemma>http://10.0.1.52:8081/nexus/content/repositories/p2.eclemma/</site-eclemma>
+		<features-eclemma>com.mountainminds.eclemma.feature.feature.group</features-eclemma>
+
+		<site-m2e>${eclipse.mirror.url}/technology/m2e/releases</site-m2e>
+
+
+		<site-moreunit>http://10.0.1.52:8081/nexus/content/repositories/p2.moreunit/</site-moreunit>
+		<features-moreunit>org.moreunit.feature.group</features-moreunit>
+
+		<site-pmd></site-pmd>
+		<features-pmd>net.sourceforge.pmd.eclipse.feature.group</features-pmd>
+
+
+		<site-sts>http://10.0.1.52:8081/nexus/content/repositories/p2.e37.sts.update/</site-sts>
+		<features-sts>org.springframework.ide.eclipse.feature.feature.group,com.springsource.sts.feature.group,org.springframework.ide.eclipse.autowire.feature.feature.group,org.springframework.ide.eclipse.aop.feature.feature.group,org.springframework.ide.eclipse.batch.feature.feature.group,org.springframework.ide.eclipse.security.feature.feature.group,org.springframework.ide.eclipse.webflow.feature.feature.group,com.springsource.sts.roo.feature.group,com.springsource.sts.maven.feature.group,org.springframework.ide.eclipse.ajdt.feature.feature.group,</features-sts>
+		
+		<site-subclipse-1.8>http://deploy.lan.croz.net/eclipseMirror/external/v1/subclipse-1.8</site-subclipse-1.8>
+		<features-subclipse-1.8>com.collabnet.subversion.merge.feature.feature.group,org.tigris.subversion.subclipse.feature.group,org.tigris.subversion.subclipse.mylyn.feature.group,org.tigris.subversion.clientadapter.feature.feature.group,org.tigris.subversion.clientadapter.javahl.feature.feature.group,org.tigris.subversion.subclipse.graph.feature.feature.group</features-subclipse-1.8>
+
+		<!--
+		<p2.repositories>${sites},${site-anyedit},${site-checkstyle},${site-eclemma},${site-moreunit}</p2.repositories>
+		<p2.installIUs>	${features},${features-anyedit},${features-checkstyle},${features-eclemma},${features-moreunit}</p2.installIUs>
+		-->
+		<p2.repositories>${sites},${site-moreunit}</p2.repositories>
+		<p2.installIUs>	${features},${features-moreunit}</p2.installIUs>
 	</properties>
-
-	<profiles>
-		<profile>
-			<id>ajdt</id>
-			<activation>
-				<property>
-					<name>ajdt</name>
-				</property>
-			</activation>
-			<properties>
-				<site-ajdt>http://deploy.lan.croz.net/eclipseMirror/external/v1/ajdt/2.1.3</site-ajdt>
-				<features-ajdt>org.eclipse.ajdt.feature.group,org.eclipse.contribution.xref.feature.group,org.eclipse.contribution.weaving.feature.group</features-ajdt>
-			</properties>
-		</profile>
-		<profile>
-			<id>no-ajdt</id>
-			<activation>
-				<property>
-					<name>!ajdt</name>
-				</property>
-			</activation>
-			<properties>
-				<site-ajdt></site-ajdt>
-				<features-ajdt></features-ajdt>
-			</properties>
-		</profile>
-
-		<profile>
-			<id>anyedit</id>
-			<activation>
-				<property>
-					<name>anyedit</name>
-				</property>
-			</activation>
-			<properties>
-				<site-anyedit>http://deploy.lan.croz.net/eclipseMirror/external/v1/anyedit</site-anyedit>
-				<features-anyedit>AnyEditTools.feature.group,EclipseSkins.feature.group,FileSync.feature.group,JDepend4Eclipse.feature.group,de.loskutov.BytecodeOutline.feature.feature.group</features-anyedit>
-			</properties>
-		</profile>
-		<profile>
-			<id>no-anyedit</id>
-			<activation>
-				<property>
-					<name>!anyedit</name>
-				</property>
-			</activation>
-			<properties>
-				<site-anyedit></site-anyedit>
-				<features-anyedit></features-anyedit>
-			</properties>
-		</profile>
-
-		<profile>
-			<id>checkstyle</id>
-			<activation>
-				<property>
-					<name>checkstyle</name>
-				</property>
-			</activation>
-			<properties>
-				<site-checkstyle>http://deploy.lan.croz.net/eclipseMirror/external/v1/eclipse-cs</site-checkstyle>
-				<features-checkstyle>net.sf.eclipsecs.feature.group,com.github.sevntu.checkstyle.checks.feature.feature.group</features-checkstyle>
-			</properties>
-		</profile>
-		<profile>
-			<id>no-checkstyle</id>
-			<activation>
-				<property>
-					<name>!checkstyle</name>
-				</property>
-			</activation>
-			<properties>
-				<site-checkstyle></site-checkstyle>
-				<features-checkstyle></features-checkstyle>
-			</properties>
-		</profile>
-
-		<profile>
-			<id>eclemma</id>
-			<activation>
-				<property>
-					<name>eclemma</name>
-				</property>
-			</activation>
-			<properties>
-				<site-eclemma>http://deploy.lan.croz.net/eclipseMirror/external/v1/eclemma</site-eclemma>
-				<features-eclemma>com.mountainminds.eclemma.feature.feature.group</features-eclemma>
-			</properties>
-		</profile>
-		<profile>
-			<id>no-eclemma</id>
-			<activation>
-				<property>
-					<name>!eclemma</name>
-				</property>
-			</activation>
-			<properties>
-				<site-eclemma></site-eclemma>
-				<features-eclemma></features-eclemma>
-			</properties>
-		</profile>
-		<profile>
-			<id>moreunit</id>
-			<activation>
-				<property>
-					<name>moreunit</name>
-				</property>
-			</activation>
-			<properties>
-				<site-moreunit>http://deploy.lan.croz.net/eclipseMirror/external/v1/moreunit</site-moreunit>
-				<features-moreunit>org.moreunit.feature.group</features-moreunit>
-			</properties>
-		</profile>
-		<profile>
-			<id>no-moreunit</id>
-			<activation>
-				<property>
-					<name>!moreunit</name>
-				</property>
-			</activation>
-			<properties>
-				<site-moreunit></site-moreunit>
-				<features-moreunit></features-moreunit>
-			</properties>
-		</profile>
-
-		<profile>
-			<id>otdt</id>
-			<activation>
-				<property>
-					<name>otdt</name>
-				</property>
-			</activation>
-			<properties>
-				<site-otdt>http://deploy.lan.croz.net/eclipseMirror/objectteams/updates/ot2.0</site-otdt>
-				<features-otdt>org.eclipse.objectteams.otdt.feature.group,org.eclipse.objectteams.otequinox.feature.group</features-otdt>
-			</properties>
-		</profile>
-		<profile>
-			<id>no-otdt</id>
-			<activation>
-				<property>
-					<name>!otdt</name>
-				</property>
-			</activation>
-			<properties>
-				<site-otdt></site-otdt>
-				<features-otdt></features-otdt>
-			</properties>
-		</profile>
-		<profile>
-			<id>pmd</id>
-			<activation>
-				<property>
-					<name>pmd</name>
-				</property>
-			</activation>
-			<properties>
-				<site-pmd>http://deploy.lan.croz.net/eclipseMirror/external/v1/pmd</site-pmd>
-				<features-pmd>net.sourceforge.pmd.eclipse.feature.group</features-pmd>
-			</properties>
-		</profile>
-		<profile>
-			<id>no-pmd</id>
-			<activation>
-				<property>
-					<name>!pmd</name>
-				</property>
-			</activation>
-			<properties>
-				<site-pmd></site-pmd>
-				<features-pmd></features-pmd>
-			</properties>
-		</profile>
-
-		<profile>
-			<id>sts</id>
-			<activation>
-				<property>
-					<name>sts</name>
-				</property>
-			</activation>
-			<properties>
-				<site-sts>http://deploy.lan.croz.net/eclipseMirror/external/v1/sts</site-sts>
-				<features-sts>org.springframework.ide.eclipse.feature.feature.group,com.springsource.sts.feature.group,org.springframework.ide.eclipse.autowire.feature.feature.group,org.springframework.ide.eclipse.aop.feature.feature.group,org.springframework.ide.eclipse.batch.feature.feature.group,org.springframework.ide.eclipse.security.feature.feature.group,org.springframework.ide.eclipse.webflow.feature.feature.group,com.springsource.sts.roo.feature.group,com.springsource.sts.maven.feature.group,org.springframework.ide.eclipse.ajdt.feature.feature.group,</features-sts>
-			</properties>
-		</profile>
-		<profile>
-			<id>no-sts</id>
-			<activation>
-				<property>
-					<name>!sts</name>
-				</property>
-			</activation>
-			<properties>
-				<site-sts></site-sts>
-				<features-sts></features-sts>
-			</properties>
-		</profile>
-
-		<profile>
-			<id>subclipse-1.8</id>
-			<activation>
-				<property>
-					<name>subclipse</name>
-				</property>
-			</activation>
-			<properties>
-				<site-subclipse-1.8>http://deploy.lan.croz.net/eclipseMirror/external/v1/subclipse-1.8</site-subclipse-1.8>
-				<features-subclipse-1.8>com.collabnet.subversion.merge.feature.feature.group,org.tigris.subversion.subclipse.feature.group,org.tigris.subversion.subclipse.mylyn.feature.group,org.tigris.subversion.clientadapter.feature.feature.group,org.tigris.subversion.clientadapter.javahl.feature.feature.group,org.tigris.subversion.subclipse.graph.feature.feature.group</features-subclipse-1.8>
-			</properties>
-		</profile>
-		<profile>
-			<id>no-subclipse-1.8</id>
-			<activation>
-				<property>
-					<name>!subclipse-1.8</name>
-				</property>
-			</activation>
-			<properties>
-				<site-subclipse-1.8></site-subclipse-1.8>
-				<features-subclipse-1.8></features-subclipse-1.8>
-			</properties>
-		</profile>
-	</profiles>
 
 	<build>
 		<plugins>
@@ -253,7 +69,7 @@
 				<configuration>
 					<argLine>-Declipse.p2.mirrors=false</argLine>
 					<!-- do not format appArgLine -->
-					<appArgLine>-consoleLog -application org.eclipse.equinox.p2.director -nosplash ${build.p2.roaming} -destination ${build.destination} -bundlepool ${build.p2.bundlepool}  -repository ${sites},${site-ajdt},${site-anyedit},${site-checkstyle},${site-eclemma},${site-moreunit},${site-otdt},${site-sts} -installIUs	${features},${features-ajdt},${features-anyedit},${features-checkstyle},${features-eclemma},${features-moreunit},${features-otdt},${features-sts}</appArgLine>
+					<appArgLine>-consoleLog -application org.eclipse.equinox.p2.director -nosplash ${build.p2.roaming} -destination ${build.destination} -bundlepool ${build.p2.bundlepool}  -repository ${p2.repositories} -installIUs ${p2.installIUs}</appArgLine>
 					<dependencies>
 						<dependency>
 							<artifactId>org.eclipse.equinox.p2.transport.ecf</artifactId>
