@@ -10,7 +10,7 @@ h1. How it works
 
 h1. How to run on our private network
 
-If you're on our private network just run .bat or .sh file.
+mvn -Pcroz -s settings.xml -Dbuild.destination=$INSTALL_DIR compile
 
 h1. How to run on public network
 

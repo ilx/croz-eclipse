@@ -2,15 +2,8 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">	
+	<localRepository>tycho-maven-repo</localRepository>
 	<mirrors>
-		<!--This sends everything else to /public -->
-		<!-- 
-		<mirror>
-			<id>others</id>
-			<mirrorOf>*</mirrorOf>
-			<url>http://localhost:8081/nexus/content/groups/public</url>
-		</mirror>
-		-->
 	</mirrors>
 	<profiles>
 		<profile>
@@ -47,19 +40,6 @@
 			</activation>
 			<repositories>
 				<repository>
-					<id>apache-snapshots</id>
-					<name>Apache maven2 repo</name>
-					<url>https://repository.apache.org/content/groups/snapshots-group</url>
-					<snapshots>
-						<enabled>true</enabled>
-						<updatePolicy>daily</updatePolicy>
-						<checksumPolicy>ignore</checksumPolicy>
-					</snapshots>
-					<releases>
-						<enabled>false</enabled>
-					</releases>
-				</repository>
-				<repository>
 					<id>apache</id>
 					<name>Apache maven2 repo</name>
 					<url>https://repository.apache.org/content/groups/public</url>
@@ -70,118 +50,19 @@
 					<url>http://repository.sonatype.org/content/groups/forge</url>
 				</repository>
 			</repositories>
-            
 			<pluginRepositories>
 				<pluginRepository>
-					<id>apache.snapshots</id>
-					<name>Apache Snapshots Repository</name>
-					<url>https://repository.apache.org/content/groups/snapshots-group</url>
-					<layout>default</layout>
-					<snapshots>
-						<enabled>true</enabled>
-						<checksumPolicy>ignore</checksumPolicy>
-					</snapshots>
-					<releases>
-						<enabled>false</enabled>
-					</releases>
-				</pluginRepository>
-
-				<pluginRepository>
-					<id>codehaus.snapshots</id>
-					<name>Codehaus Snapshots Repository</name>
-					<url>http://snapshots.repository.codehaus.org</url>
-					<layout>default</layout>
-					<snapshots>
-						<enabled>true</enabled>
-						<updatePolicy>daily</updatePolicy>
-						<checksumPolicy>ignore</checksumPolicy>
-					</snapshots>
-					<releases>
-						<enabled>false</enabled>
-					</releases>
+					<id>apache</id>
+					<name>apache maven repo</name>
+					<url>https://repository.apache.org/content/groups/public</url>
 				</pluginRepository>
 			</pluginRepositories>
 		</profile>
-
-		<profile>
-			<id>tycho-indigo</id>
-			<repositories>
-				<repository>
-					<id>platform-e37</id>
-					<url>http://download.eclipse.org/eclipse/updates/3.7</url>
-					<name>Indigo updates repo</name>
-					<layout>p2</layout>
-				</repository>
-				<repository>
-					<id>indigo</id>
-					<url>http://download.eclipse.org/releases/indigo</url>
-					<name>Indigo repo</name>
-					<layout>p2</layout>
-				</repository>
-				<repository>
-					<id>swt-bot-remote</id>
-					<url>http://download.eclipse.org/technology/swtbot/helios/dev-build/update-site/</url>
-					<name>swt-bot repo</name>
-					<layout>p2</layout>
-				</repository>
-				<repository>
-					<id>ajdt-e37</id>
-					<url>http://download.eclipse.org/tools/ajdt/37/update</url>
-					<name>ajdt repo</name>
-					<layout>p2</layout>
-				</repository>
-				<repository>
-					<id>m2e</id>
-<!--                    <url>http://download.eclipse.org/technology/m2e/milestones/1.0</url> -->
-					<url>http://download.eclipse.org/technology/m2e/releases/</url>
-					<layout>p2</layout>
-				</repository>
-			</repositories>
-		</profile>
-        
-        
-        <profile>
-            <id>croz-eclipse</id>
-            <repositories>
-                <repository>
-                    <id>croz-indigo-sr1</id>
-                    <url>http://deploy.lan.croz.net/eclipse-mirror/eclipse-indigo-sr1</url>
-                    <name>Indigo repo</name>
-                    <layout>p2</layout>
-                </repository>
-                <repository>
-                    <id>croz-ajdt</id>
-                    <url>http://deploy.lan.croz.net/eclipse-mirror/ajdt</url>
-                    <name>AJDT repo</name>
-                    <layout>p2</layout>
-                </repository>
-                <repository>
-                    <id>croz-moreunit</id>
-                    <url>http://deploy.lan.croz.net/eclipse-mirror/moreunit</url>
-                    <name>AJDT repo</name>
-                    <layout>p2</layout>
-                </repository>
-                <repository>
-                    <id>croz-eclipse-cs</id>
-                    <url>http://deploy.lan.croz.net/eclipse-mirror/eclipse-cs</url>
-                    <name>Eclipse CS repo</name>
-                    <layout>p2</layout>
-                </repository>
-                <repository>
-                    <id>croz-m2e</id>
-                    <url>http://deploy.lan.croz.net/eclipse-mirror/m2e</url>
-                    <name>Eclipse M2E repo</name>
-                    <layout>p2</layout>
-                </repository>
-            </repositories>
-        </profile>
 
 	</profiles>
 
 	<activeProfiles>
 		<activeProfile>dev</activeProfile>
-		<activeProfile>croz-eclipse</activeProfile>
-<!-- 		<activeProfile>tycho-indigo</activeProfile> -->
 	</activeProfiles>
 
 </settings>
