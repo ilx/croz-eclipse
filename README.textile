@@ -7,9 +7,16 @@ h1. How it works
 - tycho downloads required bundles using specified target platform
 - tycho-eclipserun-plugin from tycho-extras project runs p2 director application (using bundles resolved from the target platform) which installs eclipse (and specified IUs)
 
+h1. How to install Eclipse
+
+This will install Eclipse Juno, WTP, Xtend, m2e and moreunit
+
+    mvn -X -Peclipse -s settings.xml -Dbuild.destination=c:/tmp/eclipse38 compile
+
 
 h1. How to run on our private network
 
+git checkout CROZ
 mvn -Pcroz -s settings.xml -Dbuild.destination=$INSTALL_DIR compile
 
 h1. How to run on public network
