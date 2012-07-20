@@ -12,16 +12,16 @@
 
 
 	<properties>
-		<tycho-extras-version>0.14.0</tycho-extras-version>
-		<tycho-version>0.14.1</tycho-version>
-		<eclipse.mirror.url>http://10.0.1.52/eclipse/</eclipse.mirror.url>
+		<tycho-extras-version>0.15.0</tycho-extras-version>
+		<tycho-version>0.15.0</tycho-version>
+		<eclipse.mirror.url>http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/</eclipse.mirror.url>
 
-		<sites>${eclipse.mirror.url}/releases/indigo,${eclipse.mirror.url}/eclipse/updates/3.7</sites>
-		<features>org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt</features>
+		<sites>${eclipse.mirror.url}/releases/juno,${eclipse.mirror.url}/eclipse/updates/3.8</sites>
 		<!--
-		<features>org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt,org.eclipse.m2e.feature.feature.group,org.eclipse.m2e.logback.feature.feature.group,org.eclipse.jst.enterprise_ui.feature.feature.group,org.eclipse.wst.xml_ui.feature.feature.group,org.eclipse.wst.server_adapters.feature.feature.group,org.eclipse.jst.server_adapters.feature.feature.group,org.eclipse.jst.server_ui.feature.feature.group,org.eclipse.wst.web_ui.feature.feature.group,org.eclipse.jst.web_ui.feature.feature.group
-		</features>
+		<features>org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt,org.eclipse.xtend.sdk.feature.group</features>
 		-->
+		<features>org.eclipse.sdk.ide,org.eclipse.platform,org.eclipse.jdt,org.eclipse.m2e.feature.feature.group,org.eclipse.m2e.logback.feature.feature.group,org.eclipse.jst.enterprise_ui.feature.feature.group,org.eclipse.wst.xml_ui.feature.feature.group,org.eclipse.wst.server_adapters.feature.feature.group,org.eclipse.jst.server_adapters.feature.feature.group,org.eclipse.jst.server_ui.feature.feature.group,org.eclipse.wst.web_ui.feature.feature.group,org.eclipse.jst.web_ui.feature.feature.group,org.eclipse.xtend.sdk.feature.group
+		</features>
 
 		
 		<site-ajdt>http://10.0.1.52:8081/nexus/content/repositories/p2.ajdt.e37</site-ajdt>
@@ -38,8 +38,10 @@
 
 		<site-m2e>${eclipse.mirror.url}/technology/m2e/releases</site-m2e>
 
-
+		<!--
 		<site-moreunit>http://10.0.1.52:8081/nexus/content/repositories/p2.moreunit/</site-moreunit>
+		-->
+		<site-moreunit>http://moreunit.sourceforge.net/update-site/</site-moreunit>
 		<features-moreunit>org.moreunit.feature.group</features-moreunit>
 
 		<site-pmd></site-pmd>
@@ -52,10 +54,6 @@
 		<site-subclipse-1.8>http://deploy.lan.croz.net/eclipseMirror/external/v1/subclipse-1.8</site-subclipse-1.8>
 		<features-subclipse-1.8>com.collabnet.subversion.merge.feature.feature.group,org.tigris.subversion.subclipse.feature.group,org.tigris.subversion.subclipse.mylyn.feature.group,org.tigris.subversion.clientadapter.feature.feature.group,org.tigris.subversion.clientadapter.javahl.feature.feature.group,org.tigris.subversion.subclipse.graph.feature.feature.group</features-subclipse-1.8>
 
-		<!--
-		<p2.repositories>${sites},${site-anyedit},${site-checkstyle},${site-eclemma},${site-moreunit}</p2.repositories>
-		<p2.installIUs>	${features},${features-anyedit},${features-checkstyle},${features-eclemma},${features-moreunit}</p2.installIUs>
-		-->
 		<p2.repositories>${sites},${site-moreunit}</p2.repositories>
 		<p2.installIUs>	${features},${features-moreunit}</p2.installIUs>
 	</properties>
@@ -97,6 +95,10 @@
 						</dependency>
 						<dependency>
 							<artifactId>org.eclipse.equinox.ds</artifactId>
+							<type>eclipse-plugin</type>
+						</dependency>
+						<dependency>
+							<artifactId>org.eclipse.core.net</artifactId>
 							<type>eclipse-plugin</type>
 						</dependency>
 					</dependencies>

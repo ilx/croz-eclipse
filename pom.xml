@@ -8,14 +8,14 @@
     <description>CROZ eclipse distribution</description>
 
     <properties>
-        <version.tycho>0.14.1</version.tycho>
+        <version.tycho>0.15.0</version.tycho>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<build.p2.bundlepool>${build.destination}</build.p2.bundlepool>
 	<build.p2.roaming></build.p2.roaming>
     </properties>
 
 	<profiles>
-		<profile>
+	    <profile>
 	      <id>local</id>
 	      <properties>
 	      	<target.platform>m2e-e37-local</target.platform>
@@ -33,14 +33,18 @@
 	      <id>croz</id>
 	      <properties>
 	      	<target.platform>m2e-e37-croz</target.platform>
-	      	<eclipse.mirror.url>http://deploy.lan.croz.net/eclipseMirror</eclipse.mirror.url>
 	      </properties>
 	    </profile>
-		<profile>
+	    <profile>
 	      <id>eclipse</id>
 	      <properties>
+	      	<target.platform>m2e-e38-eclipse</target.platform>
+	      </properties>
+	    </profile>
+	    <profile>
+	      <id>eclipse-indigo</id>
+	      <properties>
 	      	<target.platform>m2e-e37-eclipse</target.platform>
-	      	<eclipse.mirror.url>http://download.eclipse.org</eclipse.mirror.url>
 	      </properties>
 	    </profile>
 	</profiles>
