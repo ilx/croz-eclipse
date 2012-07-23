@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.croz.infrastructure</groupId>
     <artifactId>croz-eclipse</artifactId>
-    <version>3.7.1-SNAPSHOT</version>
+    <version>3.8.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>CROZ eclipse distribution</description>
 
@@ -11,7 +11,6 @@
         <version.tycho>0.15.0</version.tycho>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<build.p2.bundlepool>${build.destination}</build.p2.bundlepool>
-	<build.p2.roaming></build.p2.roaming>
     </properties>
 
 	<profiles>
@@ -64,7 +63,7 @@
                         <artifact>
                             <groupId>net.croz.infrastructure</groupId>
                             <artifactId>croz-eclipse-target</artifactId>
-                            <version>3.7.1-SNAPSHOT</version>
+                            <version>${project.version}</version>
                             <classifier>${target.platform}</classifier>
                         </artifact>
                     </target>

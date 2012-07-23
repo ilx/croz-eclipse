@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>croz-eclipse</artifactId>
 		<groupId>net.croz.infrastructure</groupId>
-		<version>3.7.1-SNAPSHOT</version>
+		<version>3.8.0-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>jee-eclipse-install</artifactId>
@@ -67,7 +67,7 @@
 				<configuration>
 					<argLine>-Declipse.p2.mirrors=false</argLine>
 					<!-- do not format appArgLine -->
-					<appArgLine>-consoleLog -application org.eclipse.equinox.p2.director -nosplash ${build.p2.roaming} -destination ${build.destination} -bundlepool ${build.p2.bundlepool}  -repository ${p2.repositories} -installIUs ${p2.installIUs}</appArgLine>
+					<appArgLine>-consoleLog -application org.eclipse.equinox.p2.director -nosplash -roaming -destination ${build.destination} -bundlepool ${build.p2.bundlepool}  -repository ${p2.repositories} -installIUs ${p2.installIUs}</appArgLine>
 					<dependencies>
 						<dependency>
 							<artifactId>org.eclipse.equinox.p2.transport.ecf</artifactId>
